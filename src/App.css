@@ -1,38 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  font-family: "Poppins";
+}
+
+body {
+  @apply m-0 min-h-screen bg-slate-800 text-slate-300;
+}
+
 .App {
-  text-align: center;
+  @apply min-h-screen flex flex-col justify-center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  @apply text-center text-4xl;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-btn {
+  @apply m-2 p-2 border-2 rounded h-auto duration-200 outline-none underline border-slate-500 hover:border-slate-300;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.current {
+  @apply border-none no-underline;
 }
 
-.App-link {
-  color: #61dafb;
+.credit {
+  @apply absolute bottom-0 text-center w-full;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  @apply text-emerald-400 underline;
 }
