@@ -6,7 +6,7 @@ const Compare = () => {
     const [inpText, setInpText] = useState("");
     const [key, setKey] = useState("");
     const [outText, setOutText] = useState("");
-    const [errorClass, setErrorClass] = useState("");
+    const [errorClass, setErrorClass] = useState("bg-slate-700");
 
     useEffect(() => {
         setOutText(decrypt(encrypt(inpText, key), key));
@@ -58,7 +58,7 @@ const Compare = () => {
                     cols="20" 
                     rows="4"
                     value={outText}
-                    className={`p-2 w-full border-2 rounded border-slate-500 hover:border-slate-300 duration-200 outline-none resize-none font-mono uppercase bg-slate-700 ${errorClass}`} 
+                    className={`p-2 w-full border-2 rounded border-slate-500 hover:border-slate-300 duration-200 outline-none resize-none font-mono uppercase ${errorClass}`} 
                     readOnly
                 ></textarea>
             </div>
