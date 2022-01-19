@@ -4,6 +4,7 @@ export function encrypt(text, key) {
     const formattedKey = formatKey(key, text.length).toUpperCase();
 
     return text.toUpperCase().split("").map((char, idx) => {
+        if (char.charCodeAt(0) < 65 || char.charCodeAt(0) > 91) return char;
         return String.fromCharCode(((char.charCodeAt(0) + formattedKey.charCodeAt(idx) - 130) % 26)  + 65);
     }).join("");
 }
@@ -14,6 +15,7 @@ export function decrypt(text, key) {
     const formattedKey = formatKey(key, text.length).toUpperCase();
 
     return text.toUpperCase().split("").map((char, idx) => {
+        if (char.charCodeAt(0) < 65 || char.charCodeAt(0) > 91) return char;
         return String.fromCharCode(((char.charCodeAt(0) - formattedKey.charCodeAt(idx)  + 26) % 26) + 65)
     }).join("");
 }

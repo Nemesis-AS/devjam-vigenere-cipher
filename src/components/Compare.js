@@ -14,7 +14,7 @@ const Compare = () => {
 
     const compareText = () => {
         if (inpText.toLowerCase() === outText.toLowerCase()) {
-            setErrorClass("");
+            setErrorClass("bg-teal-800");
         } else {
             setErrorClass("bg-red-800");
         }
